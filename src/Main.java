@@ -11,5 +11,15 @@ public class Main {
             // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
             System.out.println("i = " + i);
         }
+
+        //fibonaci
+        int n = 10;
+        String mode = "recursive";
+        try {
+            long result =  fibonacciCalculator.calculateFibonacci(n, mode);
+            System.out.println("The Fibonacci number at position " + n + " using mode '" + mode + "' is: " + result);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
