@@ -1,15 +1,18 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import com.example.service.EmployeeService;
+import com.example.model.Employee;
+import com.example.model.Department;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        EmployeeService employeeService = new EmployeeService();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        employeeService.addEmployee(new Employee("John Doe", 1, Department.IT, 70000));
+        employeeService.addEmployee(new Employee("Jane Smith", 2, Department.HR, 65000));
+
+        System.out.println("Employees sorted by name:");
+        employeeService.sortEmployeesByName().forEach(System.out::println);
+
+        System.out.println("\nEmployees in IT department:");
+        employeeService.getEmployeesByDepartment(Department.IT).forEach(System.out::println);
     }
 }
