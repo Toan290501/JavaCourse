@@ -1,0 +1,4 @@
+john.doe@example.com
+jane_doe123@website.co.uk
+mike99@work-email.com
+tom.old.email@example.org
